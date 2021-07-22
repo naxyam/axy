@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Ficha Social de Registro de Beneficiarios</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-fluid principal">
+      <!----Encabezado-->
+      <div class="row border">
+        <!----Navegacion-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <h3 class="text-primary" href="#">AXY Software</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="panelPrincipal.html"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="panelPrincipal.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="adminNuevoDocumento.html">Nuevo Documento</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="adminPlantillas.html">Plantillas</a>
+                </li>
+                <li class="nav-item  dropdown">
+                  <a class="nav-link active" href="#" role="button" aria-expanded="false">
+                    Ficha Social de Registro de Beneficiario
+                  </a>
+
+
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+
+        <div class="d-flex justify-content-end">
+          <a href="axy.html"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
+        </div>
+      </div>
+      <div class="row ">
+        <p id="bene_id" class="text-start">Id Beneficiario</p>
+        <p id="bene_nombre" class="text-start">Nombre del beneficiario</p>
+
+        <h3 class="text-center fw-bold">Información Médica</h3>
+
+        <form action="adminficha3">
+
+          <div class="row">
+            <div class="col-xs-12 col-md-6 mb-3">
+              <label for="FormControlPeso" class="form-label">Peso</label>
+              <input type="text" class="form-control" id="FormControlPeso" placeholder="">
+            </div>
+            <div class="col-xs-12 col-md-6 mb-3">
+              <label for="FormControlTalla" class="form-label">Talla</label>
+              <input type="text" class="form-control" id="FormControlTalla" placeholder="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12 mb-3">
+              <label for="FormControlTratMedico" class="form-label">Tratamiento Médico Habitual</label>
+              <textarea class="form-control" name="FormControlTratMedico" id="txtATratMedico"></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="selecDisFisica">Discapacidad física</label>
+                <select class="form-select" aria-label="SelectDisFísica">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Discapacidad auditiva</option>
+                  <option value="2">Discapacidad visual</option>
+                  <option value="3">Discapacidad del habla</option>
+                  <option value="4">Discapacidad de columna</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="selectDisMental">Discapacidad Mental</label>
+                <select class="form-select" aria-label="SelectDisMental">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Autista</option>
+                  <option value="2">Sindrome de down</option>
+                  <option value="3">Retraso mental</option>
+                  <option value="4">Transtorno de aprendizaje</option>
+                </select>
+              </div>
+
+
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-xs-12 col-md-6 mb-3 ">
+                <label for="selecEnfCronica">Enfermedad crónica</label>
+                <select class="form-select" aria-label="SelectEnfermedadCronica">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Asma</option>
+                  <option value="2">Fibrosis Quistica</option>
+                  <option value="3">Diabetes</option>
+                  <option value="4">Polio</option>
+                </select>
+              </div>
+
+
+            </div>
+
+
+
+            <div class="row  mb-3 justify-content-center">
+              <h3 class="text-center fw-bold">Hogares</h3>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="FormControlNombre" class="form-label">Código del Hogar</label>
+                <input type="text" class="form-control" id="FormControlCodHogar" placeholder="Ej:CO755-Garcia-0151">
+              </div>
+            </div>
+            <div class="row  mb-3">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <Label class="text-center">¿Padres Biológicos viven juntos?</Label>
+
+                <div class="form-check mx-5">               
+                    <input class="form-check-input" type="radio" name="RPadresConviven" id="RPconvSi" checked>
+                    <label class="form-check-label" for="RPconvSi">
+                      Si
+                    </label>
+                  </div>
+               
+                  <div class="form-check mx-5 ">
+                    <input class="form-check-input" type="radio" name="RPadresConviven" id="RPconvNo">
+                    <label class="form-check-label" for="RPconvNo">
+                      No
+                    </label>
+                  </div>
+               
+                <Label class="mt-2">¿Padre Natural vivo?</Label>
+                <div class="form-check mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatVivo" id="RPadNatVivoSi" checked>
+                  <label class="form-check-label" for="RPadNatVivo">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatVivo" id="RPadNatVivoNo">
+                  <label class="form-check-label" for="RPadNatVivoNo">
+                    No
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatVivo" id="RPadNatVivoDesc">
+                  <label class="form-check-label" for="RPadNatVivDesc">
+                    Desconocido
+                  </label>
+                </div>
+                <Label class="mt-3">¿Padre natural convive con el niño?</Label>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatConv" id="RPadNatConvSi" checked>
+                  <label class="form-check-label" for="RPadNatConvSi">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatConv" id="RPadNatConvNo">
+                  <label class="form-check-label" for="RPadNatConvNo">
+                    No
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RPadNatConv" id="RPadNatConvDesc">
+                  <label class="form-check-label" for="RPadNatConvDesc">
+                    Desconocido
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectEstadoCivil">Estado civil Padres</label>
+                <select class="form-select" aria-label="SelectEstadoCivil">
+                  <option selected>Elegir una opción</option>
+                  <option value="1" >Casados</option>
+                  <option value="2">Unión Libre</option>
+                  <option value="3">Separados</option>
+                  <option value="3">Solteros</option>
+                  <option value="3">Viudos</option>
+                </select>
+                <Label class="mt-4">¿Madre Natural viva?</Label>
+                <div class="form-check mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatVivo" id="RMadNatVivoSi" checked>
+                  <label class="form-check-label" for="RMadNatVivo">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatVivo" id="RMadNatVivoNo">
+                  <label class="form-check-label" for="RMadNatVivoNo">
+                    No
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatVivo" id="RMadNatVivoDesc">
+                  <label class="form-check-label" for="RMadNatVivDesc">
+                    Desconocido
+                  </label>
+                </div>
+                <Label class="mt-3">¿Madre natural convive con el niño?</Label>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatConv" id="RMadNatConvSi" checked>
+                  <label class="form-check-label" for="RMadNatConvSi">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatConv" id="RMadNatConvNo">
+                  <label class="form-check-label" for="RMadNatConvNo">
+                    No
+                  </label>
+                </div>
+                <div class="form-check  mx-5">
+                  <input class="form-check-input" type="radio" name="RMadNatConv" id="RMadNatConvDesc">
+                  <label class="form-check-label" for="RMadNatConvDesc">
+                    Desconocido
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="FormControlNombre" class="form-label">Telefono1</label>
+                <input type="text" class="form-control" id="FormControlTelef1" placeholder="">
+              </div>
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Preferencias</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectCosasFav">Cosas Favoritas</label>
+                <select class="form-select" aria-label="SelectCosasFav">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Aplaudir</option>
+                  <option value="2">Bailar</option>
+                  <option value="3">Escuchar cuentos</option>
+                  <option value="4">Correr</option>
+                  <option value="5">Brincar</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectTareas">Lista de tareas</label>
+                <select class="form-select" aria-label="SelectTareas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Acarrear agua</option>
+                  <option value="2">Lavado de ropa</option>
+                  <option value="3">Recoger Leña</option>
+                  <option value="4">Cuidado de los niños</option>
+                  <option value="5">Jardineria/agricultura</option>
+                </select>
+              </div>
+
+
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectMateFav">Materias Favoritas</label>
+                <select class="form-select" aria-label="SelectMateFav">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Matemáticas</option>
+                  <option value="2">Artistica</option>
+                  <option value="3">Lengua Castellana</option>
+                  <option value="4">Ciencias</option>
+                  <option value="5">Sociales</option>
+                </select>
+              </div>
+
+
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Información de Educación</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectEduFormal">Educación formal</label>
+                <select class="form-select" aria-label="SelectEduFormal">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Preescolar</option>
+                  <option value="2">Kinder</option>
+                  <option value="3">Primaria</option>
+                  <option value="4">Secundaria</option>
+                  <option value="5">Universidad</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectTareas">Nivel Grado Local</label>
+                <select class="form-select" aria-label="SelectTareas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Grado 1</option>
+                  <option value="2">Grado 2</option>
+                  <option value="3">Grado 3</option>
+                  <option value="4">Grado 4</option>
+                  <option value="5">Grado 5</option>
+                </select>
+              </div>
+
+
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectRendiAca">Rendimiento Académico</label>
+                <select class="form-select" aria-label="SelectRendiAca">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Por encima del promedio</option>
+                  <option value="2">promedio</option>
+                  <option value="3">Por debajo del promedio</option>
+
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="txtareaComen">Comentarios</label>
+                <textarea class="form-control" name="" id="txtareaComen"></textarea>
+              </div>
+
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Información Espiritual</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectAfilRel">Afiliación religiosa</label>
+                <select class="form-select" aria-label="SelectAfilRel">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Protestante</option>
+                  <option value="2">Catolica</option>
+                  <option value="3">Hindú</option>
+                  <option value="4">Budista</option>
+                  <option value="5">Judio</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="txtOtraRel">Otro ¿Cual?</label>
+                <input class="form-control" type="text" id="txtOtraRel">
+              </div>
+
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="FormActivCristianas" class="form-label">Actividades Cristianas</label>
+                <select class="form-select" aria-label="FormActivCristianas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Escuela Dominical</option>
+                  <option value="2">Grupo de jóvenes</option>
+                  <option value="3">Clase Bíblica</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4 col-lg-4 mb-3">
+                <div class="row mx-5">
+                  <a class="btn btn-primary" href="adminFicha.html" role="button">Atras</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 mb-3 justify-content-center">
+                <div class="row  mx-5">
+                  <a class="btn btn-primary" href="adminPlantillas.html" role="button">Guardar y salir</a>
+              </div>
+            </div>
+              <div class="col-md-4 col-lg-4 mb-3">
+                <div class="row  mx-5">
+                  <button class="btn btn-primary" type="submit">Guardar y continuar</button>
+                </div>
+              </div>
+              
+
+            </div>
+
+
+
+        </form>
+      </div>
+    </div>
+    <script src="js/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

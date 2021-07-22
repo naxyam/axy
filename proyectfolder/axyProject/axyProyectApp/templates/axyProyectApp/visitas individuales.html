@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Visitas Individuales</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <h3 class="text-primary" href="#">AXY Software</h3>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="panelPrincipal.html"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="panelPrincipal.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="adminNuevoDocumento.html">Nuevo
+                                    Documento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="adminPlantillas.html">Plantillas</a>
+                            </li>
+                            <li class="nav-item  dropdown">
+                                <a class="nav-link active" href="#" role="button" aria-expanded="false">
+                                    Visitas Individuales
+                                </a>
+
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="d-flex justify-content-end">
+                <a href="axy.html"><button type="button" class="btn-close btn-close-primary"
+                        aria-label="Close"></button></a>
+            </div>
+
+        </div>
+
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputtext" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputText">
+            </div>
+            <div class="col-md-6">
+                <label for="inputText" class="form-label">Codigo</label>
+                <input type="Text" class="form-control" id="inputText"><br>
+            </div>
+
+            <div class="col-md-6">
+                <label class="mx-2" for="inputText" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="inputText"><br>
+            </div>
+            <div class="col-md-6">
+                <div class="form-check form-check-inline">
+                    <p>Familia cristiana</p>
+
+                    <input class="form-check-input" type="radio" name="radioFamCristiana" id="radioFamCristianaSi" value="Si">
+                    <label class="form-check-label" for="radioFamCristianaSi">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioFamCristiana" id="radioFamCristianaNo" value="No">
+                    <label class="form-check-label" for="radioFamCristianaNo">No</label>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Proposito de la vida</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder=""><br>
+            </div>
+
+
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Persona que atiende la visita</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder=""><br>
+            </div>
+
+
+
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Situaciones en la que se encuentra el nino</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder=""><br>
+            </div>
+
+
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Situacion en que se encuentra la familia</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder=""><br>
+            </div>
+
+
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Volver a inicio</button>
+                <button type="submit" class="btn btn-primary">volver a plantillas</button>
+                <button type="submit" class="btn btn-primary">Siguiente</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

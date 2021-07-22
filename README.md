@@ -1,0 +1,4 @@
+Título del proyecto: AXY SOFTWARE
+AXY SOFTWARE es un software de gestión documental que sirve para crear automáticamente documentos en PDF a partir de plantillas previamente programadas, se pueden hacer plantillas de cualquier tipo de documento que requiera la empresa, por lo cual también se podría decir que es un software de gestión donde se pueden crear plantillas de los documentos de los procesos de la empresa.
+
+Este programa específico está hecho para una empresa que se llama CDI JIREH, se realizó la programación de los principales documentos que la empresa utiliza, como son ficha de registro de beneficiario, entrega de regalos, visitas, fonollamadas, marco referencial.  También tiene la opción de búsqueda de documentos, configuraciones básicas del programa y la opción de llevar un control de la documentación física que se tiene en la empresa.

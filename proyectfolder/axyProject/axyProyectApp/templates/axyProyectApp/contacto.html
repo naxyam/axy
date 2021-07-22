@@ -1,0 +1,61 @@
+{% extends "axyProyectApp/base.html"%}
+
+{% load static %}
+
+{% block content %}
+
+<!---contacto--->
+
+<div class="container">
+    <div class="col-lg-12 col-sm-12">
+        <div class="row contdir py-5 d-flex justify-content-center">
+            <p class="text-center">Direccion:CL 6 B # 37-109. Cesar Cura</p>
+            <p class="text-center">Montelíbano - Córdoba</p>
+            <p class="text-center">Telefonos: 3137626072</p>
+            <p class="text-center">Email: </p>
+        </div>
+
+
+
+        <form class="form-horizontal espacio">
+
+            <div class="row form-group  cont py-2">
+                <label class="control-label col-md-4 col-sm-12" for="nombre">Nombre Completo</label>
+                <div class="col-md-8 col-sm-12">
+                    <input class="form-control" type="text" name="nombre" placeholder="Ej: Luis" autofocus required>
+                </div>
+            </div>
+            <div class="row form-group py-2">
+                <label class="control-label col-md-4 col-sm-12" for="email">Correo electrónico</label>
+                <div class="col-md-8 col-sm-12">
+                    <input class="form-control" type="email" name="email" placeholder="Ej: luis@gmail.com"
+                        autocomplete="on" autofocus required>
+                </div>
+            </div>
+            <div class="row form-group py-2">
+                <label class="control-label col-md-4 col-sm-12" for="nombre">Asunto</label>
+                <div class="col-md-8 col-sm-12">
+                    <input class="form-control" type="text" name="asunto" autofocus required>
+                </div>
+            </div>
+            <div class="row form-group py-2">
+                <label class="control-label col-md-2 col-sm-12" for="comentarios">Comentarios</label>
+                <div class="col-md-10 col-sm-12">
+                    <textarea class="form-control" name="comentarios" rows="4" cols="50"></textarea>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col d-flex justify-content-center mb-5">
+                    <button class="btn btn-primary"><a href=”mailto:”></a>Enviar</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

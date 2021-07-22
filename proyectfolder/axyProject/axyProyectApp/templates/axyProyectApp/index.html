@@ -1,0 +1,138 @@
+{% extends "axyProyectApp/base.html"%}
+
+{% load static %}
+
+{% block content %}
+
+    <!----Slider de imagenes-->
+    <div class="container-fluid ">
+      <div class="row  d-flex justify-content-center">
+
+        <div class="col-lg-8 col-md-10 col-xs-12 ">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3000">
+                <img src="{%static '/axyProyectApp/img/principal.jpeg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{%static '/axyProyectApp/img/probable.jpeg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{%static '/axyProyectApp/img/secundaria.jpeg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----Intro-->
+
+    <section class="mx-auto text-center fs-6" id="intro">
+
+      <h1 class="p-3 border-top border-3 fs-6 1h-sm"><span>
+          <p>Nuestro programa está enfocado en el desarrollo integral de los niños,
+            niñas y adolescentes, apuntando a cuatro áreas: espiritual, física,
+            socioemocional y cognitiva.</p>
+        </span></h1>
+      <p class="fs-6">Contamos con un currículo desarrollado por expertos en pedagogía en el
+        cual se indican detalladamente todas las estrategias para su
+        implementación, éste está divido de acuerdo a la edad cognitiva de los
+        niños, en los siguientes grupos:</p>
+    </section>
+    <div class="row d-flex justify-content-center ">
+      <div class="col-xs-12 col-ms-10 col-lg-8 d-flex justify-content-center">
+        <img class="img-fluid" src="img/grupos.png" alt="">
+      </div>
+    </div>
+
+
+    <!----SERVICIOS-->
+    <section class="container-fluid p-5">
+      <div class="row">
+
+        <div
+          class=" card bg-success col-md-6 col d-flex  border border-primary rounded  justify-content-around align-items-center flex-wrap">
+          <div class="text-center">
+            <h3 class="fw-bold fs-5 mt-4 px-4 pb-1 ">Actividades del Área Espiritual</h3>
+            <p class="px-4 text-center">Cultos infantiles, semana de la biblia, evangelismo, discipulados, ayunos y
+              oraciones.
+            </p>
+          </div>
+          <div class="row d-flex py-2 justify-content-around ">
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/espiritual1.png' %}" alt="Espiritual1">
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/espiritual2.png' %}" alt="Espiritual2">
+            </div>
+          </div>
+        </div>
+        <div
+          class=" card bg-primary col-md-6 col d-flex  border border-primary rounded justify-content-around align-items-center flex-wrap">
+          <div>
+            <h3 class="fw-bold fs-5 mt-4 px-4 pb-1 text-center">Actividades del Área Física</h3>
+            <p class="px-4 text-center">Deportes, torneos de microfútbol, semana de hábitos saludables, lavado de manos,
+              manejo de residuos sólidos, control de plagas, brigadas de salud, programa de alimentación, seguimientos
+              de antropometrías, control de crecimiento y desarrollo y vacunación, entre otros.
+            </p>
+          </div>
+          <div class="row d-flex py-2 justify-content-around">
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/fisica1.png' %}" alt="Fisica1">
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/fisica2.png' %}" alt="Fisica2">
+            </div>
+          </div>
+
+
+        </div>
+        <div
+          class="card bg-warning col-md-6 col d-flex border border-primary rounded justify-content-around align-items-center flex-wrap">
+          <div>
+            <h3 class=" fw-bold fs-5 mt-4 px-4 pb-1 text-center">Actividades del Área Socio-Emocional</h3>
+            <p class="px-4 text-center">Celebraciones de cumpleaños, día del niño, día de la familia, amor y amistad,
+              semana navideña, salidas recreativas, escritura de cartas a los patrocinadores…
+            </p>
+          </div>
+          <div class="row d-flex py-2 justify-content-around">
+            <div class="col col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/socioemocional1.png' %}" alt="Socioemocional1">
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/socioemocional2.png' %}" alt="Socioemocional2">
+            </div>
+          </div>
+        </div>
+        <div
+          class=" card bg-danger col-md-6 col d-flex border border-primary rounded  justify-content-around align-items-center flex-wrap">
+          <div>
+            <h3 class="fw-bold fs-5 mt-4 px-4 pb-1 text-center">Actividades del Área Cognitiva</h3>
+            <p class="px-4 text-center">Refuerzos académicos, manualidades, talleres a padres, habilidades generadoras
+              de ingresos, simulacros de evacuación, etc.
+            </p>
+          </div>
+          <div class="row d-flex py-2 justify-content-around">
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/cognitiva1.png' %}" alt="Cognitiva1">
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <img class="img-servicios img-fluid" src="{%static '/axyProyectApp/img/cognitiva2.png' %}" alt="Cognitiva2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    {% endblock %}
