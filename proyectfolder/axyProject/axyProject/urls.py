@@ -21,8 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
+    path('login/', include('login.urls')),
+    path("panelPrincipal/", include ('panelPrincipal.urls')),
     path('', include('axyProyectApp.urls')),
     
     
 
+]
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

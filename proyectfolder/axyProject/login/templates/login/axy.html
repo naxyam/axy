@@ -1,9 +1,18 @@
-{% extends "axyProyectApp/base.html"%}
+{% extends "axyProyectApp/base.html" %}
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 {% block content %}
         <!----Formulario de acceso-->
+
+        {% if form.errors %}
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Notificación: </strong> Su usuario y contraseña no coinciden, por favor inténtelo de nuevo
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
 
         <div class="container row justify-content-center my-5">
             <div class="col-md-4 col-xs-12 d-sm-flex justify-content-end d-none">
@@ -12,18 +21,18 @@
             </div>
             <div class="col-xs-12  col-md-6 d-flex justify-content-center card bg-primary text-light">
 
-                <form action="panelPrincipal.html">
+                <form action="{% url 'Login' %}" method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            required>
+                        {{form.username|add_class:'form-label'|attr:'autocomplete:off'}}
 
                     </div>
                     <div class="mb-3">
                         <label for="Password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="Password" required>
-                        <div><a id="emailHelp" class="form-text text-light" href="olvidocontrasena.html">¿Olvidó su
-                                contraseña?</a></div>
+                        {{form.password|add_class:"form-label"|attr:"autocomplete:off"}}
+                        <div><a id="emailHelp" class="form-text text-light" href="{% url 'resetPassword'%} ">¿Olvidó su
+                                contraseña</a></div>
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="ShowPassword">

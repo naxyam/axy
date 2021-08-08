@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.urls import reverse_lazy
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'axyProyectApp',
+    'widget_tweaks',
     'blog',
     'contacto',
+    'axyProyectApp',
+    'login',
+    "panelPrincipal",
 ]
 
 MIDDLEWARE = [
@@ -143,3 +147,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'natymendieta29@gmail.com'
 EMAIL_HOST_PASSWORD = 'YoTeletrabajo2017'
+
+LOGIN_REDIRECT_URL = reverse_lazy('PanelPrincipal')

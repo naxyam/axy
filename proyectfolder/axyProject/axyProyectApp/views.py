@@ -8,6 +8,4 @@ def quienesomos(request):
     return render(request, "axyProyectApp/quienesomos.html")
 
 
-def login(request):
-    return render(request, "axyProyectApp/axy.html")
 
