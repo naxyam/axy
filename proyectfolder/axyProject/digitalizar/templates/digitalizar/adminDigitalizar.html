@@ -1,0 +1,88 @@
+{% extends "axyProyectApp/baseaxy.html" %}
+
+{% load static %}
+
+{% block content %}
+<!----Encabezado-->
+<div class="row border">
+    <!----Navegacion-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <h3 class="text-primary" href="#">AXY Software</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="panelPrincipal.html"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="panelPrincipal.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="adminNuevoDocumento.html">Nuevo
+                            Documento</a>
+                    </li>
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link active dropdown-toggle" href="" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Digitalizar documento
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <li><a class="dropdown-item" href="adminPlantillas.html">Crear a partir de plantillas</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="d-flex justify-content-end">
+        <a href="{% url 'Login' %}"><button type="button" class="btn-close btn-close-primary"
+                aria-label="Close"></button></a>
+    </div>
+</div>
+<div class="row d-flex justify-content-between ">
+
+    <aside class="col-xs-12 col-md-4 col-lg-4  border">
+        <!----izquierdo-->
+        <form action="">
+            <h3>ESCANER</h3>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Escaner</label>
+                <input class="form-control" type="text" value="Canon G2100" aria-label="readonly input example"
+                    readonly>
+            </div>
+            <label for="exampleDataList" class="form-label">Tipo de Archivo</label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Tipo de Archivo">
+            <datalist class="my-2" id="datalistOptions">
+                <option value="Pdf">
+                <option value="JPG">
+                <option value="PNG">
+                <option value="Mapa de bits">
+                <option value="Seleccione una opción">
+            </datalist>
+            <div class="d-flex flex-column justify-content-center my-4">
+                <button class="btn btn-primary my-1" type="button" id="button-addon1">Escanear</button>
+                <button class="btn btn-primary my-1" type="button" id="button-addon1">Previsualizar</button>
+            </div>
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Cargar un archivo</label>
+                <input class="form-control form-control-sm" id="formFileSm" type="file">
+            </div>
+        </form>
+    </aside>
+    <aside class="col-xs-12 col-md-8 col-lg-8 border ">
+        <!----derecho-->
+        <img class="img-fluid" src="img/OSD.jpeg" alt="">
+
+    </aside>
+    {% endblock %}

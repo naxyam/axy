@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'axyProyectApp',
     'login',
     "panelPrincipal",
+    "digitalizar",
 ]
 
 MIDDLEWARE = [

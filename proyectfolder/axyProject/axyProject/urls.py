@@ -23,7 +23,9 @@ urlpatterns = [
     path('contacto/', include('contacto.urls')),
     path('login/', include('login.urls')),
     path("panelPrincipal/", include ('panelPrincipal.urls')),
+    path('digitalizar', include('digitalizar.urls')),
     path('', include('axyProyectApp.urls')),
+    
     
     
 
