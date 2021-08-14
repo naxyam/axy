@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'contacto',
     'axyProyectApp',
     'login',
-    "panelPrincipal",
-    "digitalizar",
+    'panelPrincipal',
+    'digitalizar',
+    'plantillas',
 ]
 
 MIDDLEWARE = [

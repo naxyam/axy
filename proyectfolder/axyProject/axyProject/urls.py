@@ -22,8 +22,9 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
     path('login/', include('login.urls')),
-    path("panelPrincipal/", include ('panelPrincipal.urls')),
-    path('digitalizar', include('digitalizar.urls')),
+    path('panelPrincipal/', include ('panelPrincipal.urls')),
+    path('digitalizar/', include('digitalizar.urls')),
+    path('plantillas/', include('plantillas.urls')),
     path('', include('axyProyectApp.urls')),
     
     

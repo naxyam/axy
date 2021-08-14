@@ -1,0 +1,384 @@
+{% extends "axyProyectApp/baseaxy.html" %}
+
+{% load static %}
+
+{% block title %}
+
+
+<title>Ficha Social de Registro</title>
+
+{% endblock %}
+
+{% block content %}
+      <!----Encabezado-->
+      <div class="row border">
+        <!----Navegacion-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <h3 class="text-primary" href="#">AXY Software</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'PanelPrincipal' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'NuevoDocumento' %}">Nuevo Documento</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'Plantillas' %}">Plantillas</a>
+                </li>
+                <li class="nav-item  dropdown">
+                  <a class="nav-link active" href="#" role="button" aria-expanded="false">
+                    Ficha Social de Registro de Beneficiario
+                  </a>
+
+
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+
+        <div class="d-flex justify-content-end">
+          <a href="../../../login/templates/login/axy.html"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
+        </div>
+      </div>
+      <div class="row ">
+
+        <h3 class="text-center fw-bold">Información del Beneficiario</h6>
+          <p class="text-end">Programa CDSP-Center Based</p>
+          <form action="adminFicha2.html" method="GET">
+            <div class="row">
+              <div class="form-check col-xs-12 col-md-4 mb-3">
+                <label>
+                  Tipo de Información
+                </label>
+              </div>
+              <div class="form-check col-xs-12 col-md-4 mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="rRegNuevo" checked>
+                <label class="form-check-label" for="rRegNuevo">
+                  Registro Inicial
+                </label>
+              </div>
+              <div class="form-check col-xs-12 col-md-4 mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="rActuli">
+                <label class="form-check-label" for="rActuali">
+                  Actualización
+                </label>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlID" class="form-label">Identificación</label>
+                <input type="text" class="form-control" id="FormControlID" placeholder="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlNombre" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="FormControlNombre" placeholder="Ej: Juan Jose">
+              </div>
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlApellido" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="FormControlApellido" placeholder="Ej: Perez Gomez">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlNombPref" class="form-label">Nombre Preferido</label>
+                <input type="text" class="form-control" id="FormControlNomPref" placeholder="">
+              </div>
+              <div class="col-xs-12 col-md-6 mb-3">
+                <Label>Sexo</Label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RSexo" id="RSexoFem" checked>
+                  <label class="form-check-label" for="RSexoFem">
+                    Femenino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RSexo" id="RSexoMas">
+                  <label class="form-check-label" for="RSexoMas">
+                    Masculino
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlFeNac" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="FormControlFeNac" placeholder="">
+
+              </div>
+              <div class="col-xs-12 col-md-6 mb-3">
+                <label for="FormControlEdad" class="form-label">Edad</label>
+                <input type="text" class="form-control" id="FormControlEdad" placeholder="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 mb-3">
+                <Label>Es Huerfano</Label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RHuerf" id="RHuerfSi">
+                  <label class="form-check-label" for="RHuerfSi">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check">
+
+                  <input class="form-check-input" type="radio" name="RHuerf" id="RHuerfNo" checked>
+                  <label class="form-check-label" for="RHuerfNo">
+                    No
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-xs-12 col-md-6 mb-3 ">
+                <div class="text-center">
+                  <label class="fw-bold" for="">Grupo Etareo</label>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 ">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta02">
+                      <label class="form-check-label" for="RGrupeta02">
+                        0-2
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta35">
+                      <label class="form-check-label" for="RGrupeta35">
+                        3-5
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta68">
+                      <label class="form-check-label" for="RGrupeta68">
+                        6-8
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta911">
+                      <label class="form-check-label" for="RGrupeta911">
+                        9-11
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta1214">
+                      <label class="form-check-label" for="RGrupeta1214">
+                        12-14
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta1518">
+                      <label class="form-check-label" for="RGrupeta1518">
+                        15-18
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="RGrupeta" id="RGrupeta+19">
+                      <label class="form-check-label" for="RGrupeta+19">
+                        + 19
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="row  mb-3">
+              <h4 class="text-center">Datos de contacto</h4>
+              <div class="">
+                <label for="FormControlNombre" class="form-label">Dirección de correspondencia</label>
+                <input type="text" class="form-control" id="FormControlDire" placeholder="">
+              </div>
+            </div>
+            <div class="row  mb-3">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectDepa">Departamento</label>
+                <select class="form-select" aria-label="SelectDepar">
+                  <option>Elegir una opción</option>
+                  <option value="1" selected>Cordoba</option>
+                  <option value="2">Antioquia</option>
+                  <option value="3">Sucre</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectCiudad">Ciudad</label>
+                <select class="form-select" aria-label="SelectCiudad">
+                  <option>Elegir una opción</option>
+                  <option value="1" selected>Montelíbano</option>
+                  <option value="2">Monteria</option>
+                  <option value="3">Cereté</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="FormControlNombre" class="form-label">Telefono1</label>
+                <input type="text" class="form-control" id="FormControlTelef1" placeholder="">
+              </div>
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Preferencias</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectCosasFav">Cosas Favoritas</label>
+                <select class="form-select" aria-label="SelectCosasFav">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Aplaudir</option>
+                  <option value="2">Bailar</option>
+                  <option value="3">Escuchar cuentos</option>
+                  <option value="4">Correr</option>
+                  <option value="5">Brincar</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectTareas">Lista de tareas</label>
+                <select class="form-select" aria-label="SelectTareas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Acarrear agua</option>
+                  <option value="2">Lavado de ropa</option>
+                  <option value="3">Recoger Leña</option>
+                  <option value="4">Cuidado de los niños</option>
+                  <option value="5">Jardineria/agricultura</option>
+                </select>
+              </div>
+
+
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectMateFav">Materias Favoritas</label>
+                <select class="form-select" aria-label="SelectMateFav">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Matemáticas</option>
+                  <option value="2">Artistica</option>
+                  <option value="3">Lengua Castellana</option>
+                  <option value="4">Ciencias</option>
+                  <option value="5">Sociales</option>
+                </select>
+              </div>
+
+
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Información de Educación</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectEduFormal">Educación formal</label>
+                <select class="form-select" aria-label="SelectEduFormal">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Preescolar</option>
+                  <option value="2">Kinder</option>
+                  <option value="3">Primaria</option>
+                  <option value="4">Secundaria</option>
+                  <option value="5">Universidad</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="SelectTareas">Nivel Grado Local</label>
+                <select class="form-select" aria-label="SelectTareas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Grado 1</option>
+                  <option value="2">Grado 2</option>
+                  <option value="3">Grado 3</option>
+                  <option value="4">Grado 4</option>
+                  <option value="5">Grado 5</option>
+                </select>
+              </div>
+
+
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectRendiAca">Rendimiento Académico</label>
+                <select class="form-select" aria-label="SelectRendiAca">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Por encima del promedio</option>
+                  <option value="2">promedio</option>
+                  <option value="3">Por debajo del promedio</option>
+
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="txtareaComen">Comentarios</label>
+                <textarea class="form-control" name="" id="txtareaComen"></textarea>
+              </div>
+
+
+            </div>
+            <div class="row mb-3">
+              <h4 class="text-center">Información Espiritual</h4>
+
+              <div class="col-md-6 col-lg-6 mb-3">
+
+                <label for="SelectAfilRel">Afiliación religiosa</label>
+                <select class="form-select" aria-label="SelectAfilRel">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Protestante</option>
+                  <option value="2">Catolica</option>
+                  <option value="3">Hindú</option>
+                  <option value="4">Budista</option>
+                  <option value="5">Judio</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="txtOtraRel">Otro ¿Cual?</label>
+                <input class="form-control" type="text" id="txtOtraRel">
+              </div>
+
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-3">
+                <label for="FormActivCristianas" class="form-label">Actividades Cristianas</label>
+                <select class="form-select" aria-label="FormActivCristianas">
+                  <option selected>Elegir una opción</option>
+                  <option value="1">Escuela Dominical</option>
+                  <option value="2">Grupo de jóvenes</option>
+                  <option value="3">Clase Bíblica</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="row mb-3 justify-content-between">
+              
+              <div class="col-md-4 col-lg-4 mb-3">
+                <div class="row  mx-5">
+                  <a class="btn btn-primary" href="adminPlantillas.html" role="button">Guardar y salir</a>
+              </div>
+            </div>
+              <div class="col-md-4 col-lg-4 mb-3">
+                <div class="row  mx-5">
+                  <button class="btn btn-primary" type="submit">Guardar y continuar</button>
+                </div>
+              </div>
+              
+
+            </div>
+
+
+          </form>
+      </div>
+   
+    {% endblock %}

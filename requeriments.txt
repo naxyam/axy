@@ -1,0 +1,6 @@
+python
+django
+django-mysql 
+pillow
+widget_tweaks
+mysql o mariaDB
