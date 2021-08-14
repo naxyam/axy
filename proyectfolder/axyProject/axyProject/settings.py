@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'axyProject.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'axypruebas',
+            'NAME': 'axypruebas2',
             'USER': 'root',
             'PASSWORD': '',
             'HOST': 'localhost',
