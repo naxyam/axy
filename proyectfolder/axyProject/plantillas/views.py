@@ -6,6 +6,14 @@ def plantillas(request):
 
 def fichaSocReg(request):
     return render(request, "plantillas/adminFicha.html")
+
+def guardarInfo(request):
+    benef_id=request.POST['']
+
+def calcularEdad(request):
+
+
+def getGrupeta(request):
     
 
 def fichaSocReg2(request):

@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'axyProject.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'axypruebas2',
+            'NAME': 'axypruebas',
             'USER': 'root',
             'PASSWORD': '',
             'HOST': 'localhost',
@@ -117,7 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-eu'
 
 TIME_ZONE = 'UTC'
 

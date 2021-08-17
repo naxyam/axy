@@ -1,3 +1,10 @@
 Usuario: admin
 contraseña: root
 correo: natymendieta29@gmail.com
+
+
+Usuario: jdvalencia
+contraseña: Agosto2021@
+
+Usuario: yromero
+contraseña: Septiembre2021?
