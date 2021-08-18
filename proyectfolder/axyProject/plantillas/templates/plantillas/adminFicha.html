@@ -51,14 +51,14 @@
 
 
         <div class="d-flex justify-content-end">
-          <a href="../../../login/templates/login/axy.html"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
+          <a href="{% url 'Login' %}"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
         </div>
       </div>
       <div class="row ">
 
         <h3 class="text-center fw-bold">Información del Beneficiario</h6>
           <p class="text-end">Programa CDSP-Center Based</p>
-          <form action="adminFicha2.html" method="GET">
+          <form name="formInfoBene" action="adminFicha2.html" method="GET">
             <div class="row">
               <div class="form-check col-xs-12 col-md-4 mb-3">
                 <label>
@@ -282,22 +282,14 @@
                 <label for="SelectEduFormal">Educación formal</label>
                 <select class="form-select" name="" aria-label="SelectEduFormal">
                   <option selected>Elegir una opción</option>
-                  <option value="benef_eduformal">Preescolar</option>
-                  <option value="2">Kinder</option>
-                  <option value="3">Primaria</option>
-                  <option value="4">Secundaria</option>
-                  <option value="5">Universidad</option>
+                  
                 </select>
               </div>
               <div class="col-md-6 col-lg-6 mb-3">
                 <label for="SelectTareas">Nivel Grado Local</label>
                 <select class="form-select" aria-label="SelectTareas">
                   <option selected>Elegir una opción</option>
-                  <option value="1">Grado 1</option>
-                  <option value="2">Grado 2</option>
-                  <option value="3">Grado 3</option>
-                  <option value="4">Grado 4</option>
-                  <option value="5">Grado 5</option>
+                  
                 </select>
               </div>
 
@@ -330,11 +322,7 @@
                 <label for="SelectAfilRel">Afiliación religiosa</label>
                 <select class="form-select" aria-label="SelectAfilRel">
                   <option selected>Elegir una opción</option>
-                  <option value="1">Protestante</option>
-                  <option value="2">Catolica</option>
-                  <option value="3">Hindú</option>
-                  <option value="4">Budista</option>
-                  <option value="5">Judio</option>
+                  
                 </select>
               </div>
               <div class="col-md-6 col-lg-6 mb-3">
@@ -348,9 +336,7 @@
                 <label for="FormActivCristianas" class="form-label">Actividades Cristianas</label>
                 <select class="form-select" aria-label="FormActivCristianas">
                   <option selected>Elegir una opción</option>
-                  <option value="1">Escuela Dominical</option>
-                  <option value="2">Grupo de jóvenes</option>
-                  <option value="3">Clase Bíblica</option>
+              
                 </select>
               </div>
 
