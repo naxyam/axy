@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+
 
 class Religion(models.Model):
     rel_id = models.AutoField(primary_key=True)
@@ -119,7 +121,6 @@ class Beneficiario(models.Model):
     benef_nombrepref = models.CharField(max_length=200)
     benef_sexo = models.ForeignKey('Sexo', models.DO_NOTHING, db_column='benef_sexo')
     benef_fechanac = models.DateField()
-    benef_edad=models.IntegerField()
     benef_grupoeta = models.ForeignKey('Grupoetareo', models.DO_NOTHING, db_column='benef_grupoeta')
     benef_huerfano = models.IntegerField()
     benef_nav = models.IntegerField()
@@ -145,8 +146,11 @@ class Beneficiario(models.Model):
         verbose_name_plural ='Beneficiarios'
 
     def __str__(self):
-
         return self.benef_apellidos + self.benef_nombres
+    
+    def calc_edad(self):
+        year = now = datetime.datetime.now().year
+        return year - self.benef_fechanac
 
 
 class Hobbies(models.Model):

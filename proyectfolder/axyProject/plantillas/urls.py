@@ -4,7 +4,6 @@ from . import views
 
 urlpatterns = [   
     
-    path('', views.plantillas, name='Plantillas'),
-    path('adminFicha', views.fichaSocReg, name='FichaSocRegistro'),
-    path('adminFicha2', views.fichaSocReg2, name='FichaSocRegistro2'),
+    
+    path('plantilla/adminFicha', views.getFicha.as_view(), name='FichaSocRegistro'),
 ]
