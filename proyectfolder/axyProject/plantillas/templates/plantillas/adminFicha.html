@@ -60,7 +60,7 @@
 <div class="row ">
   <h3 class="text-center fw-bold">Información del Beneficiario</h6>
     <p class="text-end">Programa CDSP-Center Based</p>
-    <form action="." method="POST">
+    <form action="{% url 'success' %}" method="POST">
       {% csrf_token %}
       <div class="row mb-3">
         <div class="form-check col-xs-12 col-md-4 mb-3">
