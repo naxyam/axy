@@ -1,6 +1,9 @@
 from django.db import models
 import datetime
 
+from django.db.models.enums import Choices, ChoicesMeta
+from django.utils.regex_helper import Choice
+
 
 class Religion(models.Model):
     rel_id = models.AutoField(primary_key=True)
@@ -122,8 +125,8 @@ class Beneficiario(models.Model):
     benef_sexo = models.ForeignKey('Sexo', models.DO_NOTHING, db_column='benef_sexo')
     benef_fechanac = models.DateField()
     benef_grupoeta = models.ForeignKey('Grupoetareo', models.DO_NOTHING, db_column='benef_grupoeta')
-    benef_huerfano = models.IntegerField()
-    benef_nav = models.IntegerField()
+    benef_huerfano = models.BooleanField()
+    benef_nav = models.BooleanField()
     benef_barrio = models.CharField(max_length=200, blank=True, null=True)
     benef_direccion = models.CharField(max_length=200)
     benef_telefono = models.BigIntegerField(blank=True, null=True)
@@ -137,6 +140,9 @@ class Beneficiario(models.Model):
     benef_img = models.ImageField(upload_to='plantillas', default= 'null')
     benef_created = models.DateTimeField(auto_now_add=True)
     benef_updated = models.DateTimeField(auto_now_add=True)
+    benef_hobbies = models.ManyToManyField('Hobbies')
+    benef_materias = models.ManyToManyField('Materias')
+    benef_deberes = models.ManyToManyField('Deberes')
     
 
     class Meta:
@@ -155,7 +161,7 @@ class Beneficiario(models.Model):
 
 class Hobbies(models.Model):
     hob_id = models.AutoField(primary_key=True)
-    hob_nombre = models.CharField(max_length=50)
+    hob_nombre = models.CharField(max_length=50,)
 
     class Meta:
         managed = True
@@ -165,20 +171,6 @@ class Hobbies(models.Model):
 
     def __str__(self):
         return self.hob_nombre 
-
-
-class Hobbiesxbenef(models.Model):
-    hobxben_id = models.IntegerField(primary_key=True)
-    hobxben_idben = models.ForeignKey(Beneficiario, models.DO_NOTHING, db_column='hobxben_idben', blank=True, null=True)
-    hobxben_idhob = models.ForeignKey(Hobbies, models.DO_NOTHING, db_column='hobxben_idhob', blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'hobbiesxbenef'
-        verbose_name = 'HobbiexBenef'
-        verbose_name_plural ='HobbiesxBenef'
-
-    
 
 
 class Materias(models.Model):
@@ -195,18 +187,7 @@ class Materias(models.Model):
         return self.mat_nombre
 
 
-class Materiasxbenef(models.Model):
-    matxben_id = models.IntegerField(primary_key=True)
-    matxben_idben = models.ForeignKey(Beneficiario, models.DO_NOTHING, db_column='matxben_idben', blank=True, null=True)
-    matxben_idmat = models.ForeignKey(Materias, models.DO_NOTHING, db_column='matxben_idmat', blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'materiasxbenef'
-        verbose_name = 'MateriaxBenef'
-        verbose_name_plural ='MateriasxBenef'
-
-    
+   
 
 class Deberes(models.Model):
     deb_id = models.AutoField(primary_key=True)
@@ -222,15 +203,6 @@ class Deberes(models.Model):
         return self.deb_nombre
 
 
-class Deberesxbenef(models.Model):
-    debxben_id = models.IntegerField(primary_key=True)
-    debxben_idben = models.ForeignKey(Beneficiario, models.DO_NOTHING, db_column='debxben_idben', blank=True, null=True)
-    debxben_iddeb = models.ForeignKey(Deberes, models.DO_NOTHING, db_column='debxben_iddeb', blank=True, null=True)
 
-    class Meta:
-        managed = True
-        db_table = 'deberesxbenef'
-        verbose_name = 'DeberxBenef'
-        verbose_name_plural ='DeberesxBenef'
 
     

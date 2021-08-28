@@ -27,16 +27,11 @@ admin.site.register(models.Beneficiario, BeneAdmin)
 
 admin.site.register(models.Hobbies)
 
-admin.site.register(models.Hobbiesxbenef)
-
 admin.site.register(models.Materias)
-
-admin.site.register(models.Materiasxbenef)
-
 
 admin.site.register(models.Deberes)
 
-admin.site.register(models.Deberesxbenef)
+
 
 
 

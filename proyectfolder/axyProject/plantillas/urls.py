@@ -1,9 +1,10 @@
 from django.urls import path
-from . import views
+from plantillas import views
 
 
 urlpatterns = [   
     
-    
-    path('plantilla/adminFicha', views.getFicha.as_view(), name='FichaSocRegistro'),
+    path('plantillas/adminPlantillas', views.plantillas, name='Plantillas'),
+    path('plantillas/adminFicha', views.fichaSocReg.as_view(), name='FichaSocRegistro'),
+    path('plantillas/adminFicha2', views.fichaSocReg2, name='FichaSocRegistro2'),
 ]

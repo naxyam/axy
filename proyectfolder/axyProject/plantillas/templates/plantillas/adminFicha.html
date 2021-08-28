@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 {% block title %}
 
 
@@ -10,72 +11,108 @@
 {% endblock %}
 
 {% block content %}
-      <!----Encabezado-->
-      <div class="row border">
-        <!----Navegacion-->
+<!----Encabezado-->
+<div class="row border">
+  <!----Navegacion-->
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <h3 class="text-primary" href="#">AXY Software</h3>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'PanelPrincipal' %}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'NuevoDocumento' %}">Nuevo Documento</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'FichaSocRegistro' %}">Plantillas</a>
-                </li>
-                <li class="nav-item  dropdown">
-                  <a class="nav-link active" href="#" role="button" aria-expanded="false">
-                    Ficha Social de Registro de Beneficiario
-                  </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <h3 class="text-primary" href="#">AXY Software</h3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'PanelPrincipal' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'NuevoDocumento' %}">Nuevo Documento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'Plantillas' %}">Plantillas</a>
+          </li>
 
-
-                </li>
-              </ul>
-
-            </div>
-          </div>
-        </nav>
+          <li class="nav-item  dropdown">
+            <a class="nav-link active" href="#" role="button" aria-expanded="false">
+              Ficha Social de Registro de Beneficiario
+            </a>
 
 
-        <div class="d-flex justify-content-end">
-          <a href="{% url 'Login' %}"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="d-flex justify-content-end">
+    <a href="{% url 'Login' %}"><button type="button" class="btn-close btn-close-primary"
+        aria-label="Close"></button></a>
+  </div>
+</div>
+
+<div class="row ">
+  <h3 class="text-center fw-bold">Información del Beneficiario</h6>
+    <p class="text-end">Programa CDSP-Center Based</p>
+    <form action="." method="POST">
+      {% csrf_token %}
+      <div class="row mb-3">
+        <div class="form-check col-xs-12 col-md-4 mb-3">
+          <label>
+            Tipo de Información
+          </label>
         </div>
+        <div class="form-check col-xs-12 col-md-4 mb-3">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="rRegNuevo" checked>
+          <label class="form-check-label" for="rRegNuevo">
+            Registro Inicial
+          </label>
+        </div>
+        <div class="form-check col-xs-12 col-md-4 mb-3">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="rActuli">
+          <label class="form-check-label" for="rActuali">
+            Actualización
+          </label>
+        </div>
+        {% for field in form.visible_fields %}
+        <div class="row">
+         
+            <label for="{{ field.name }}" class="form-label">{{ field.label }}</label>
+            {{ field }}
+          
+        </div>
+        {% endfor %}
+
       </div>
-      <div class="row ">
 
-        <h3 class="text-center fw-bold">Información del Beneficiario</h6>
-          <p class="text-end">Programa CDSP-Center Based</p>
+</div>
 
 
-          <form name="formFichaReg" action="." method="POST">
-            {% csrf_token %}
 
-            {{ form }}
-            
-              <div class="col-md-4 col-lg-4 mb-3">
-                <div class="row  mx-5">
-                  <button class="btn btn-primary" type="submit">Guardar y continuar</button>
-                </div>
-              </div>
-              
+<div class="row mb-3 justify-content-between">
 
-        
+  <div class="col-md-4 col-lg-4 mb-3">
+    <div class="row  mx-5">
+      <a class="btn btn-primary" href="adminPlantillas.html" role="button">Guardar y salir</a>
+    </div>
+  </div>
+  <div class="col-md-4 col-lg-4 mb-3">
+    <div class="row  mx-5">
+      <button class="btn btn-primary" type="submit">Guardar y continuar</button>
+    </div>
+  </div>
 
 
-          </form>
-      </div>
-   
-    {% endblock %}
+</div>
+
+
+</form>
+</div>
+
+{% endblock %}

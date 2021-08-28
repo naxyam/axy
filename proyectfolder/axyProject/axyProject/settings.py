@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'widget_tweaks',
+    'django.contrib.staticfiles',    
+    #apps
     'blog',
     'contacto',
     'axyProyectApp',
@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     'panelPrincipal',
     'digitalizar',
     'plantillas',
+    #libs
+    'widget_tweaks',
+    'betterforms',
+    
 ]
 
 MIDDLEWARE = [
