@@ -1,28 +1,48 @@
 
-from django.http.response import HttpResponseRedirect
-from django.http import HttpRequest
 from django.shortcuts import render
-from django.urls import reverse
 from django.urls.base import reverse_lazy
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView
 from plantillas.forms import formFichaReg
 from plantillas.models import Beneficiario
+from django.http import HttpResponseRedirect
+
 
 
 def plantillas(request):   
     return render(request, 'plantillas/adminPlantillas.html')
 
-class fichaSocReg(CreateView):
+        
+def success(request):   
+    return render(request, 'plantillas/success.html')
+
+class fichaSocReg(CreateView): 
     model=Beneficiario
     form_class = formFichaReg
     template_name = 'plantillas/adminFicha.html' 
-    success_url = reverse_lazy('plantillas: success') 
+    success_url = reverse_lazy('success')
+    
+''' 
+def post(self, request, ):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+        # <process form cleaned data>
+            return HttpResponseRedirect(success) '''
+        
 
-'''def fichaSocReg2(request):   
-    return render(request, 'plantillas/adminFicha2.html')'''
 
-def success(request):   
-    return render(request, 'plantillas/success.html')
+
+
+
+
+
+
+''''
+def fichaSocReg2(request):   
+    return render(request, 'plantillas/adminFicha2.html')
+'''
+
+
 
 
 

@@ -7,9 +7,9 @@ class formFichaReg(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for form in self.visible_fields():
-            form.field.widget.attrs.update({'autocomplete': 'off'})
-            self.fields['benef_id'].widget.attrs.update({'autofocus': True})
-            self.fields['benef_fechanac'].widget.attrs.update({'placeholder': 'formato aa/mm/dd'})
+           form.field.widget.attrs.update({'autocomplete': 'off'})
+           #self.fields['benef_id'].widget.attrs.update({'autofocus': True})
+           self.fields['benef_fechanac'].widget.attrs.update({'placeholder': 'formato aaaa-mm-dd'})
                                   
     class Meta:
         model = Beneficiario
@@ -69,16 +69,17 @@ class formFichaReg(ModelForm):
             )
 
         }
+        {
+            'benef_correo': EmailField(
+                #attrs = {                    
+                   #'placeholder':'Ingrese un nombre',                    
+               # }
+
+            )
+
+        }
 
 
 
-''''
-
-class beneCompleto(MultiModelForm):
-    form_classes ={    
-        'beneficiario': formFichaReg,          
-      
-        
-    }'''
 
 
