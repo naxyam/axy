@@ -4,9 +4,11 @@ from plantillas import views
 
 urlpatterns = [   
     
-    path('plantillas/adminPlantillas', views.plantillas, name='Plantillas'),
+    path('plantillas/adminPlantillas', views.beneListView.as_view(), name='Plantillas'),
     path('plantillas/adminFicha', views.fichaSocReg.as_view(), name='FichaSocRegistro'),
-    path('plantillas/success', views.success, name='success'),
+    path('plantillas/adminPlantillas/invoice/pdf/<int:pk>', views.fisorePdfView.as_view(), name='fisorePdf'),
+  
+  
     #path('plantillas/adminFicha2', views.fichaSocReg2, name='FichaSocRegistro2'),
     
 ]

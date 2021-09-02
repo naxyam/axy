@@ -152,7 +152,7 @@ class Beneficiario(models.Model):
         verbose_name_plural ='Beneficiarios'
 
     def __str__(self):
-        return self.benef_apellidos + self.benef_nombres
+        return self.benef_id + ' ' + self.benef_apellidos + ' ' + self.benef_nombres
     
     def calc_edad(self):
         year = now = datetime.datetime.now().year

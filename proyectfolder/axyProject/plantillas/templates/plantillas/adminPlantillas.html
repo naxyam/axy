@@ -54,8 +54,16 @@
       <div class="row d-flex justify-content-between align-items-center vh-100">
 
         <aside class="col-xs-12 col-md-12 col-lg-12 mx-0">
+
+          {%  for field in object_list  %}
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary">{{ field }}</li>      
+              
+              
+            </ul>
+          {% endfor %}
           <!----carrusel-->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <!----<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -85,6 +93,6 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          </div>
+           </div> -->
         </aside>
         {% endblock %}
