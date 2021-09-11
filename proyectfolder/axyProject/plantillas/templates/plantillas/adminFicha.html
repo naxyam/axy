@@ -63,9 +63,9 @@
     <form action=" " method="POST">
       {% csrf_token %}
       <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>Notificación: </strong> {{ form.errors}}
+        <strong>Notificación: </strong> 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <P></P>
+        <P>{{ form.errors}}</P>
     </div>
       
       <div class="row mb-3">

@@ -8,8 +8,9 @@ class formFichaReg(ModelForm):
         super().__init__(*args, **kwargs)
         for form in self.visible_fields():
            form.field.widget.attrs.update({'autocomplete': 'off'})
-           #self.fields['benef_id'].widget.attrs.update({'autofocus': True})
-           self.fields['benef_fechanac'].widget.attrs.update({'placeholder': 'formato aaaa-mm-dd'})
+           self.fields['benef_id'].widget.attrs.update({'autofocus': True})
+           self.fields['benef_fechanac'].widget.attrs.update({'placeholder': 'Seleccione la fecha'})
+           self.fields['benef_fechanac'].widget.attrs.update({'id':'datetimepicker'})
                                   
     class Meta:
         model = Beneficiario
@@ -43,12 +44,7 @@ class formFichaReg(ModelForm):
 
         }        
         {
-            'benef_fechanac': DateInput(
-                #attrs = {                    
-                   #'placeholder':'Ingrese un nombre',                    
-               # }
-
-            )
+            'benef_fechanac': DateField()
 
         }
         {
@@ -60,15 +56,7 @@ class formFichaReg(ModelForm):
             )
 
         }
-        {
-            'benef_activcrist': SelectMultiple(
-                #attrs = {                    
-                   #'placeholder':'Ingrese un nombre',                    
-               # }
-
-            )
-
-        }
+      
         {
             'benef_correo': EmailField(
                 #attrs = {                    
@@ -78,6 +66,8 @@ class formFichaReg(ModelForm):
             )
 
         }
+       
+
 
 
 

@@ -38,7 +38,7 @@ class fisorePdfView(View):
                 html, dest=response)
             # if error then show some funy view
             if pisa_status.err:
-                return HttpResponse('We had some errors <pre>' + html + '</pre>')
+                return HttpResponse('Tenemos errores' + html + '</pre>')
             return response
         except:
             pass
