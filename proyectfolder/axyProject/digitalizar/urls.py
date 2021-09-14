@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     
   
-    path('', views.digitalizar, name='Digitalizar'),
+    path('digitalizar', views.digitalizar, name='Digitalizar'),
    
 
 ]

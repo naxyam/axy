@@ -4,50 +4,7 @@
 
 {% block content %}
       <!----Encabezado-->
-      <div class="row border">
-        <!----Navegacion-->
-        <div class="d-flex justify-content-end">
-          <a href="{% url 'Login' %}"><button type="button" class="btn-close btn-close-primary" aria-label="Close"></button></a>
-        </div>
       
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <h3 class="text-primary" href="#">AXY Software</h3>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'PanelPrincipal' %}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'NuevoDocumento' %}">Nuevo Documento</a>
-                </li>
-                <li class="nav-item  dropdown">
-                  <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Plantillas
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{% url 'FichaSocRegistro' %}">Ficha Social de Registro</a></li>
-                    <li><a class="dropdown-item" href="adminFonoLlamadas.html">Fono Llamadas</a></li>
-                    <li><a class="dropdown-item" href="adminMarco.html">Marco de referencia</a></li>
-                    <li><a class="dropdown-item" href="visitas individuales.html">Visitas</a></li>
-                    <li><a class="dropdown-item" href="adminRegalos.html">Entrega de regalos</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-            </div>
-          </div>
-        </nav>
 
 
         
@@ -62,37 +19,6 @@
               
             </ul>
           {% endfor %}
-          <!----carrusel-->
-          <!----<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{%static 'axyProyectApp/img/cognitiva3.png' %}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{%static 'axyProyectApp/img/espiritual3.png' %}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{%static 'axyProyectApp/img/fisica3.png' %}" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-           </div> -->
+         
         </aside>
         {% endblock %}
