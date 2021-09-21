@@ -2,7 +2,7 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls.base import reverse, reverse_lazy
-from django.views.generic import CreateView, ListView, View
+from django.views.generic import CreateView, View
 from plantillas.forms import formFichaReg
 from plantillas.models import Beneficiario
 from django.http import HttpResponse
@@ -12,19 +12,17 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 from django.contrib.staticfiles import finders
 
-
-class beneListView(ListView):
-    model= Beneficiario
-    template_name= 'plantillas/adminPlantillas.html'
-
         
 
 class fichaSocReg(CreateView): 
     model=Beneficiario
     form_class = formFichaReg
     template_name = 'plantillas/adminFicha.html' 
-    success_url = reverse_lazy('Plantillas')
+    success_url = reverse_lazy('success')
 
+
+def success(request):
+    return render(request, 'plantillas/success.html')
 
 class fisorePdfView(View):
     def get(self, request, *args, **kwargs): 

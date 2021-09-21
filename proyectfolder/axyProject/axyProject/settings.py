@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'contacto',
     'axyProyectApp',
     'login',
-    'panelPrincipal',
     'digitalizar',
     'plantillas',
+    'consulta',
     #libs
     'widget_tweaks',
     'betterforms',

@@ -9,5 +9,9 @@ def resetPassword(request):
     return render(request, 'login/olvidocontrasena.html')
 
 
+def panelPrincipal(request):
+    return render(request, 'login/panelPrincipal.html')
+
+
 
 

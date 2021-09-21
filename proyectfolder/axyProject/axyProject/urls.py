@@ -21,11 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
-    path('login/', include('login.urls')),
-    path('panelPrincipal/', include ('panelPrincipal.urls')),
+    path('login/', include('login.urls')),    
     path('digitalizar/', include('digitalizar.urls')),
     path('plantillas/', include('plantillas.urls')),
+    path('', include('consulta.urls')),
     path('', include('axyProyectApp.urls')),
+    
     
     
     
