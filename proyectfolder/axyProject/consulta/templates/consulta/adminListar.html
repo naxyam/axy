@@ -2,23 +2,39 @@
 
 {% load static %}
 
+
+
 {% block content %}
-      <!----Encabezado-->
-      
+<!----Encabezado-->
+
+<div class="row d-flex justify-content-between align-items-center vh-100">
+
+  <aside class="col-xs-12 col-md-12 col-lg-12 mx-0">
+
+    <table id="bene" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Sexo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for field in object_list %}
+        <tr>
+          <th scope="row">{{field.benef_id }}</th>         
+          <td>{{ field.benef_nombres }}</td>
+          <td>{{ field.benef_apellidos }}</td>
+          <td>{{ field.benef_sexo }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </aside>
+  {% endblock %}
+
+</div>
 
 
-        
-      <div class="row d-flex justify-content-between align-items-center vh-100">
-
-        <aside class="col-xs-12 col-md-12 col-lg-12 mx-0">
-
-          {%  for field in object_list  %}
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-primary">{{ field }}</li>      
-              
-              
-            </ul>
-          {% endfor %}
-         
-        </aside>
-        {% endblock %}
