@@ -1,11 +1,13 @@
 from django.urls import path
-from consulta.views import beneListView
+from consulta import views
 
 
 urlpatterns = [
     
   
-    path('adminListar', beneListView.as_view(), name='Listar'),
+    path('adminListar', views.beneListView.as_view(), name='Listar'),
+    path('plantillas/adminFicha/<int:pk>/', views.beneUpdateView.as_view(), name='Update'),
+    path('plantillas/delete/<int:pk>/', views.beneDeleteView.as_view(), name='Delete'),
    
 
 ]

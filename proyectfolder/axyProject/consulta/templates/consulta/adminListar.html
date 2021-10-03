@@ -27,6 +27,11 @@
           <td>{{ field.benef_nombres }}</td>
           <td>{{ field.benef_apellidos }}</td>
           <td>{{ field.benef_sexo }}</td>
+          <td>
+            <a href="{% url 'Update' field.benef_id %}" class= 'btn btn-warning btn-xs btn-flat'><i class="bi bi-pencil-square"></i></a>
+        
+            <a href="{% url 'Delete' field.benef_id %}" class= 'btn btn-danger btn-xs btn-flat'><i class="bi bi-x-square-fill"></i></a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>

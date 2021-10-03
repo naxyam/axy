@@ -1,0 +1,52 @@
+{% extends "axyProyectApp/baseaxy.html" %}
+
+{% load static %}
+
+
+{% block title %}
+
+
+<title>Ficha Social de Registro</title>
+
+{% endblock %}
+
+{% block content %}
+<!----Encabezado-->
+
+
+<div class="row ">
+ 
+  <form action=" " method="POST">
+    {% csrf_token %}
+    
+
+    <div class="row mb-3 justify-content-center">
+     
+      <div class="alert alert-danger alert-dismissible">
+           <h5><i class="icon fas fa-ban"></i> Atención</h5>
+        Se borrará el registro {{ object.benef_id  }}
+        ¿Está seguro de realizar esta acción?
+      </div>
+      <div class="col-md-6 col-lg-6 mb-3">
+        <div class="row  mx-5 d-flex justify-content-center">
+          <button class="btn btn-primary" type="submit">
+            <i class="bi bi-archive-fill"></i>
+            Si, Aceptar</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 mb-3">
+        <div class="row  mx-5 d-flex justify-content-center">
+          <a href="{% url 'Listar'%}" class="btn btn-danger" type="button">
+            <i class="bi bi-x-square-fill"></i>
+            Cancelar</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </form>
+</div>
+
+{% endblock %}
