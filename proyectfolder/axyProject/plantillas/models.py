@@ -124,6 +124,7 @@ class Beneficiario(models.Model):
     benef_nombrepref = models.CharField(max_length=200)
     benef_sexo = models.ForeignKey('Sexo', models.DO_NOTHING, db_column='benef_sexo')
     benef_fechanac = models.DateField()
+    benef_edad = models.DateField('Edad', db_column='benef_edad')
     benef_grupoeta = models.ForeignKey('Grupoetareo', models.DO_NOTHING, db_column='benef_grupoeta')
     benef_huerfano = models.BooleanField()
     benef_nav = models.BooleanField()
@@ -156,7 +157,7 @@ class Beneficiario(models.Model):
     
     def calc_edad(self):
         year = now = datetime.datetime.now().year
-        return year - self.benef_fechanac
+        return year - self.benef_fechanac.year
 
 
 class Hobbies(models.Model):
@@ -201,6 +202,80 @@ class Deberes(models.Model):
 
     def __str__(self):
         return self.deb_nombre
+
+class Historiaclinica(models.Model):
+    histclinica_id = models.IntegerField(primary_key=True)
+    histclinica_beneid = models.ForeignKey(Beneficiario, models.DO_NOTHING, db_column='histclinica_beneid', blank=True, null=True)
+    histclinica_peso = models.FloatField(blank=True, null=True)
+    histclinica_talla = models.FloatField(blank=True, null=True)
+    histclinica_tratmedico = models.TextField(db_column='histclinica_tratMedico', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = True
+        db_table = 'historiaclinica'
+
+
+class Discapacidadesfisicas(models.Model):
+    disfisica_id = models.IntegerField(primary_key=True)
+    disfisica_nombre = models.CharField(max_length=100)
+    disfisica_descripcion = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'discapacidadesfisicas'
+
+
+class Discapacidadesmentales(models.Model):
+    dismental_id = models.IntegerField(primary_key=True)
+    dismental_nombre = models.CharField(max_length=100)
+    dismental_descripcion = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'discapacidadesmentales'
+
+
+class Disfisicaxhistoria(models.Model):
+    disfixhist_id = models.IntegerField(primary_key=True)
+    disfixhist_disfisicaid = models.ForeignKey(Discapacidadesfisicas, models.DO_NOTHING, db_column='disfixhist_disfisicaid')
+    disfixhist_historiaid = models.ForeignKey('Historiaclinica', models.DO_NOTHING, db_column='disfixhist_historiaid')
+
+    class Meta:
+        managed = True
+        db_table = 'disfisicaxhistoria'
+
+
+class Dismentalxhistoria(models.Model):
+    dismenxhist_id = models.IntegerField(primary_key=True)
+    dismenxhist_dismenid = models.ForeignKey(Discapacidadesmentales, models.DO_NOTHING, db_column='dismenxhist_dismenid')
+    dismenxhist_historiaid = models.ForeignKey('Historiaclinica', models.DO_NOTHING, db_column='dismenxhist_historiaid')
+
+    class Meta:
+        managed = True
+        db_table = 'dismentalxhistoria'
+
+
+
+
+class Enfcronicaxhistoria(models.Model):
+    enfcronicaxhist_id = models.IntegerField(primary_key=True)
+    enfcronicaxhist_disfisicaid = models.ForeignKey('Enfermedadcronica', models.DO_NOTHING, db_column='enfcronicaxhist_disfisicaid')
+    enfcronicaxhist_historiaid = models.ForeignKey('Historiaclinica', models.DO_NOTHING, db_column='enfcronicaxhist_historiaid')
+
+    class Meta:
+        managed = True
+        db_table = 'enfcronicaxhistoria'
+
+
+class Enfermedadcronica(models.Model):
+    enfcronica_id = models.IntegerField(primary_key=True)
+    enfcronica_nombre = models.CharField(max_length=100)
+    enfcronica_descripcion = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'enfermedadcronica'
+
 
 
 
