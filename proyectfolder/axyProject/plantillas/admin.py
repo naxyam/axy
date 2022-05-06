@@ -19,6 +19,12 @@ admin.site.register(models.Ciudades)
 
 admin.site.register(models.Departamento)
 
+admin.site.register(models.Discapacidadesfisicas)
+
+admin.site.register(models.Discapacidadesmentales)
+
+admin.site.register(models.Enfermedadcronica)
+
 
 class BeneAdmin(admin.ModelAdmin):
     readonly_fields=('benef_created', 'benef_updated')

@@ -1,5 +1,5 @@
 from django.forms import *
-from plantillas.models import Beneficiario
+from plantillas.models import Beneficiario, Historiaclinica
 #from betterforms.multiform import MultiModelForm
 
 
@@ -67,6 +67,26 @@ class formFichaReg(ModelForm):
 
         }
        
+
+class formHistClinica(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+                
+                                  
+    class Meta:
+        model = Historiaclinica
+        fields = '__all__'
+        labels = {
+            'histclinica_beneid' : 'Beneficiario',
+            'histclinica_peso': 'Peso',
+            'histclinica_talla': 'Talla',
+            'histclinica_tratmedico': 'Tratamiento médico',
+            'histclinica_disfisica': 'Discapacidad Física',
+            'histclinica_dismental': 'Discapacidad Mental',
+            'histclinica_enfcronica' : 'Enfermedad crónica',
+            
+        }        
+        
 
 
 
